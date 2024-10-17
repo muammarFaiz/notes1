@@ -18,17 +18,48 @@ form {
     flex-direction: column;
     background-color: grey;
 }
+form > textarea {
+    resize: vertical;
+}
 
 .notes {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 .notes > * {
     background-color: grey;
     margin: 2px;
 }
+.note-bg-active {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: rgb(198 228 255 / 63%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.note-button-active {
+    background-color: #fff9f0;
+    width: 70vw;
+    height: 87vh;
+}
 .cursor-pointer {
     cursor: pointer;
+}
+.note-title-p, .note-p {
+    margin-left: 25px;
+    margin-top: 35px;
+}
+.note-title-p {
+    font-size: 35px;
+}
+.note-p {
+    font-size: 25px;
 }
 
 .footer {

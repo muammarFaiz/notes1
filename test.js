@@ -1,11 +1,17 @@
-const sliced = ["abc", "abcd", "efg", "hij", "afh", "xyz", 7];
+const sliced = ["abc", "abcd", "efg", "hij", "afh", "xyz"];
 const hehe = [];
-// const filtered = sliced.filter((v) => {
-//     console.log(v.match(/a/));
-//     return v.match(/a/);
-// })
-hehe.forEach((val) => {
-    console.log("foreach running");
-    console.log(val);
+const filtered = sliced.filter((v) => {
+    // console.log(v.match(/aaa/));
+    return v.match(/aaa/);
 })
-// console.log(filtered);
+// hehe.forEach((val) => {
+//     console.log("foreach running");
+//     console.log(val);
+// })
+// if (hehe[0]) {
+//     // console.log(hehe[0]);
+//     console.log("true");
+// } else {
+//     console.log("false");
+// }
+console.log(filtered);
