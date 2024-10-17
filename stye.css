@@ -3,6 +3,7 @@ body > * {
     margin: 1px;
 }
 body {
+    margin: 0;
     display: grid;
     grid-template-columns: 25vw 1fr;
 }
@@ -23,14 +24,71 @@ form > textarea {
 }
 
 .notes {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 100px;
+    max-height: 400px;
+    overflow: auto;
 }
 .notes > * {
     background-color: grey;
     margin: 2px;
 }
+.note-button {
+    overflow: auto;
+    position: relative;
+}
+.delete-button {
+    position: absolute;
+    right: 0;
+}
+
+.note-title-p, .note-p {
+    margin-left: 25px;
+    margin-top: 35px;
+    margin-right: 25px;
+    word-break: break-all;
+}
+.note-title-p {
+    font-size: 35px;
+}
+.note-p {
+    font-size: 25px;
+}
+.edit-title-input, .edit-note-input {
+    background-color: #fff3e0;
+    font-size: 25px;
+}
+
+.footer {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 850px) {
+    .user-input {
+        grid-column: span 2;
+    }
+    .notes {
+        grid-column: span 2;
+    }
+}
+@media screen and (max-width: 700px) {
+    .notes {
+        grid-template-columns: repeat(5 , 1fr);
+    }
+}
+@media screen and (max-width: 500px) {
+    .notes {
+        grid-template-columns: repeat(4 , 1fr);
+    }
+}
+@media screen and (max-width: 400px) {
+    .notes {
+        grid-template-columns: repeat(3 , 1fr);
+    }
+}
+
+/* ------------------------javascript------------------------- */
 .note-bg-active {
     position: absolute;
     width: 100vw;
@@ -42,26 +100,26 @@ form > textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .note-button-active {
-    background-color: #fff9f0;
+    background-color: #fff3e0;
     width: 70vw;
     height: 87vh;
 }
-.cursor-pointer {
-    cursor: pointer;
+.note-button-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.note-title-p, .note-p {
-    margin-left: 25px;
-    margin-top: 35px;
-}
-.note-title-p {
-    font-size: 35px;
-}
-.note-p {
-    font-size: 25px;
+.note-button-edit > textarea {
+    flex-grow: 1;
 }
 
-.footer {
-    grid-column: span 2;
+/* multi-purpose */
+.hide {
+    display: none;
+}
+.cursor-pointer {
+    cursor: pointer;
 }
